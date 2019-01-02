@@ -1,14 +1,12 @@
 <template>
     <div class="background-page" :style="{'background-image': backgroundImage}">
         <div class="background-gradient">
-             <div class="top-content">
-                 <h1>{{ title }}</h1>
-                 <p class="details">80% Indicado/Ciencia Ficción/{{ year }}/EUA/14</p>
-             </div>
-             <div class="main-content">
-
-             </div>
-             <bottom-content></bottom-content>
+            <div class="top-content">
+                <h1>{{ title }}</h1>
+                <p class="details">80% Indicado/Ciencia Ficción/{{ year }}/EUA/14</p>
+            </div>
+            <main-content></main-content>
+            <bottom-content></bottom-content>
         </div>
     </div>
 </template>
@@ -16,6 +14,7 @@
 <script>
 import axios from 'axios'
 import bottomContent from './components/BottomContent.vue'
+import mainContent from './components/mainContent.vue'
 export default {
     data() {
         return {
@@ -26,7 +25,8 @@ export default {
         }
     },
     components: {
-        bottomContent
+        bottomContent,
+        mainContent
     },
     created () {
         axios.get('/tv-shows/SHOW123.json')
@@ -36,6 +36,7 @@ export default {
                 this.year = serieInfo.Year
                 this.backgroundImage = 'url(' + serieInfo.Images.Background + ')'
                 console.log(serieInfo);
+                
             })
             .catch(error => console.log(error))
     }
@@ -66,11 +67,14 @@ export default {
 
     .background-page {
         @extend %full-size;
+        display: block;
         background-size: cover;
         position: relative;
     }
     .background-gradient {
         @extend %full-size;
+        position: relative;
+        display: block;
         background: linear-gradient(to left,
                      rgba(0,0,0, 1), 
                      rgba(0,0,0, .5)),
@@ -80,7 +84,12 @@ export default {
                      rgba(0,0,0, .4));
     }
     .top-content {
-        padding: 20px 40px;
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 20px 0 0 40px;
+        height: 20%;
     }
     h1{
         font-size: 55px;
@@ -88,5 +97,12 @@ export default {
     .details {
         font-size: 20p;
         color: $text-color;
+    }
+
+    .main-content {
+        display: block;
+        float: right;
+        height: 50%;
+        width: 30%;
     }
 </style>
