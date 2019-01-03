@@ -98,11 +98,4 @@ export default {
         font-size: 20p;
         color: $text-color;
     }
-
-    .main-content {
-        display: block;
-        float: right;
-        height: 50%;
-        width: 30%;
-    }
 </style>

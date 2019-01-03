@@ -101,32 +101,9 @@
     }
 
     .nav-list {
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-        list-style: none;
-        border-bottom: 1px solid $text-color;
+        @extend %navigation;
         li {
-            float: left;
-            position: relative;
-            font-size: 20px;
-            text-transform: uppercase;
-            color:  $text-color;
             margin-right: 100px;
-            padding-bottom: 10px;
-            cursor: pointer;
-        }
-    }
-
-    .active {
-        &::after{
-            content: '';
-            display: block;
-            position: absolute;
-            margin-top: 10px;
-            width: 100%;
-            height: 3px;
-            background-color: green;
         }
     }
 
