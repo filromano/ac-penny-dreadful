@@ -2,19 +2,19 @@
     <div>
         <ul class="actions-list">
             <li>
-                <img src="../../assets/add-gray-s.svg" alt="">
+                <img src="../../assets/svg/add-gray-s.svg" alt="">
                 <p>Mi Lista</p>
         </li>
             <li>
-                <img src="../../assets/sad-gray-w.svg" alt="">
+                <img src="../../assets/svg/sad-gray-w.svg" alt="">
                 <p>Evaluar</p>
         </li>
             <li>
-                <img src="../../assets/rec-gray-s.svg" alt="">
+                <img src="../../assets/svg/rec-gray-s.svg" alt="">
                 <p>Grabar</p>
         </li>
             <li>
-                <img src="../../assets/share-gray-s.svg" alt="">
+                <img src="../../assets/svg/share-gray-s.svg" alt="">
                 <p>Compartir</p>
         </li>
         </ul>

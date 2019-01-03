@@ -7,7 +7,7 @@
             <li v-for="episode in season.episodes" :key="episode.ID">
                 <div @click="openDescription(episode.ID)" class="episode">
                     <p class="episode-title">{{ episode.EpisodeNumber }} {{ episode.Title }}</p>
-                    <img class="play-icon" src="../assets/play-small-player-w.svg" alt="">
+                    <img class="play-icon" src="../assets/svg/play-small-player-w.svg" alt="">
                 </div>
                 <div :id="episode.ID" class="episode-description hidden">
                     <img class="episode-image" :src=episode.Image>

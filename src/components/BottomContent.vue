@@ -4,7 +4,7 @@
             <li @click="changeBottom('geral')" :class=" { active:geral }">General</li>
             <li @click="changeBottom('cast')" :class=" { active:castlist }">Elenco</li>
             <li>Principales Premios</li>
-            <li><img src="../assets/logo-telecine.svg" alt=""></li>
+            <li><img src="../assets/svg/logo-telecine.svg" alt=""></li>
         </ul>
         <div class="details-content">
             <transition name="fade" mode="out-in">
