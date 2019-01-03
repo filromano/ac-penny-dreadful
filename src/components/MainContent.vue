@@ -3,9 +3,16 @@
         <ul class="season-nav">
             <li @click="changeSeason(season.season)" v-for="season in serie" :key="season.season" :class="{ active:season.active }">{{ season.title }}</li>
         </ul>
-        <ul v-for="season in activeSeason" :key="season.season">
+        <ul class="episode-list" v-for="season in activeSeason" :key="season.season">
             <li v-for="episode in season.episodes" :key="episode.ID">
-                {{ episode.SeasonNumber }}
+                <div @click="openDescription(episode.ID)" class="episode">
+                    <p class="episode-title">{{ episode.EpisodeNumber }} {{ episode.Title }}</p>
+                    <img class="play-icon" src="../assets/play-small-player-w.svg" alt="">
+                </div>
+                <div :id="episode.ID" class="episode-description hidden">
+                    <img class="episode-image" :src=episode.Image>
+                    <p class="episode-synopsis">{{ episode.Synopsis }}</p>
+                </div>
             </li>
         </ul>
     </div>
@@ -61,6 +68,14 @@
                         this.serie[i].active = true
                     }
                 }
+            },
+            openDescription(id) {
+                var descriptions = document.querySelectorAll(".episode-description")
+                descriptions.forEach(function(item) {
+                    item.classList.add("hidden")
+                })
+                var episode = document.getElementById(id)
+                episode.classList.remove("hidden")
             }
         }
     }
@@ -78,8 +93,57 @@
 
     .season-nav {
         @extend %navigation;
+        height: 40px;
         li {
             margin-right: 20px;
         }
+    }
+
+    .episode-list {
+        display: block;
+        width: 100%;
+        height: 70%;
+        list-style: none;
+        overflow: scroll;
+        li {
+            display: block;
+            width: 100%;
+            float: left;
+            border-bottom: 1px solid #303030;
+        }
+    }
+
+    .episode {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 10px 0;
+        cursor: pointer;
+    }
+
+    .episode-title {
+        display: block;
+        float: left;
+        width: auto;
+    }
+
+    .episode-image {
+        display: block;
+        max-width: 80%;
+        padding: 10px 0;
+    }
+
+    .episode-synopsis{
+        margin-bottom: 10px;
+    }
+
+    .play-icon {
+        display: block;
+        float: right;
+        max-width: 25px;
+    }
+
+    .hidden {
+        display: none;
     }
 </style>
