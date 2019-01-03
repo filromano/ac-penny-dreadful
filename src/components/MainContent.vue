@@ -87,13 +87,12 @@
         display: block;
         float: right;
         height: 50%;
-        width: 30%;
+        width: 40%;
         padding-right: 40px;
     }
 
     .season-nav {
         @extend %navigation;
-        height: 40px;
         li {
             margin-right: 20px;
         }

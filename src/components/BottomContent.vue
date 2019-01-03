@@ -4,6 +4,7 @@
             <li @click="changeBottom('geral')" :class=" { active:geral }">General</li>
             <li @click="changeBottom('cast')" :class=" { active:castlist }">Elenco</li>
             <li>Principales Premios</li>
+            <li><img src="../assets/logo-telecine.svg" alt=""></li>
         </ul>
         <div class="details-content">
             <transition name="fade" mode="out-in">
@@ -66,6 +67,11 @@
         @extend %navigation;
         li {
             margin-right: 100px;
+        }
+        li:last-child {
+            margin-right: 0;
+            float: right !important;
+            cursor: default;
         }
     }
 

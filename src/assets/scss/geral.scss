@@ -4,6 +4,7 @@ $text-color: #C7C7C7;
 %navigation {
     display: inline-block;
     width: 100%;
+    height: 40px;
     box-sizing: border-box;
     list-style: none;
     border-bottom: 1px solid $text-color;
@@ -29,6 +30,7 @@ $text-color: #C7C7C7;
 }
 
 .active{
+    color: white !important;
      &::after{
         width: 100% !important;
         background-color: green;
