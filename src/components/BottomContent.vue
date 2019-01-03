@@ -6,66 +6,26 @@
             <li>Principales Premios</li>
         </ul>
         <div class="details-content">
-            <div v-if="geral">
-                <ul class="actions-list">
-                    <li>
-                        <img src="../assets/add-gray-s.svg" alt="">
-                        <p>Mi Lista</p>
-                </li>
-                    <li>
-                        <img src="../assets/sad-gray-w.svg" alt="">
-                        <p>Evaluar</p>
-                </li>
-                    <li>
-                        <img src="../assets/rec-gray-s.svg" alt="">
-                        <p>Grabar</p>
-                </li>
-                    <li>
-                        <img src="../assets/share-gray-s.svg" alt="">
-                        <p>Compartir</p>
-                </li>
-                </ul>
-                <div class="sinopse">
-                    <p><strong>SINOPSE</strong></p>
-                    <p>{{ sinopse }}</p>
-                </div>
-            </div>
-            <div v-else-if="castlist" class="cast">
-                <ul>
-                    <li  v-for="member in cast" :key="member">
-                        <p class="character">Personagem</p>
-                        <p class="actor">{{ member.Name }}</p>
-                    </li>
-                </ul>
-            </div>
+            <geral-content v-if="geral"></geral-content>
+            <cast-content v-else-if="castlist"></cast-content>
         </div>
     </div>
 </template>
 
 <script>
+    import geralContent from './BottomContent/Geral.vue'
+    import castContent from './BottomContent/Cast.vue'
     import axios from 'axios'
     export default {
+        components: {
+            geralContent,
+            castContent
+        },
         data() {
             return {
-                cast: [],
-                sinopse: '',
                 geral: true,
                 castlist: false
             }
-        },
-        created () {
-            axios.get('/tv-shows/SHOW123.json')
-                .then(response => {
-                    const serieInfo = response.data
-                    this.sinopse = serieInfo.Synopsis
-                    console.log(response)
-                    const castData = serieInfo.Cast
-                    for (let key in castData) {
-                        const member = castData[key]
-                        this.cast.push(member)
-                    }
-                })
-                .catch(error => console.log(error))
         },
         methods: {
             changeBottom(nav) {
@@ -104,66 +64,6 @@
         @extend %navigation;
         li {
             margin-right: 100px;
-        }
-    }
-
-    .details-content {
-        display: block;
-        width: 100%;
-    }
-
-    .actions-list {
-        display: inline-block;
-        box-sizing: border-box;
-        width: 40%;
-        list-style: none;
-        clear: both;
-        float: left;
-        li {
-            display: block;
-            float: left;
-            color: $text-color;
-            margin-left: 30px;
-            img {
-                display: block;
-                margin: 10px auto;
-            }
-            p {
-                text-align: center;
-            }
-        }
-    }
-
-    .sinopse {
-        display: block;
-        box-sizing: border-box;
-        float: left;
-        width: 60%;
-        padding-top: 10px;
-        color: $text-color;
-    }
-
-    .cast {
-        display: block;
-        width: 100%;
-        li {
-            display: block;
-            box-sizing: border-box;
-            float: left;
-            width: 15%;
-            min-height: 90px;
-            background: #605f5f;
-            color: $text-color;
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 10px;
-            margin-right: 2%;
-            .character {
-                font-size: 18px;
-            }
-            .actor{
-                font-size: 14px;
-            }
         }
     }
 </style>
