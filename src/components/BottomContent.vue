@@ -6,8 +6,10 @@
             <li>Principales Premios</li>
         </ul>
         <div class="details-content">
-            <geral-content v-if="geral"></geral-content>
-            <cast-content v-else-if="castlist"></cast-content>
+            <transition name="fade" mode="out-in">
+                <geral-content v-if="geral"></geral-content>
+                <cast-content v-else-if="castlist"></cast-content>
+            </transition>
         </div>
     </div>
 </template>
@@ -66,4 +68,11 @@
             margin-right: 100px;
         }
     }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .3s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+        }
 </style>
