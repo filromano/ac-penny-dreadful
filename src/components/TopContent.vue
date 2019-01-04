@@ -1,6 +1,6 @@
 <template>
     <div class="top-content">
-        <h1>{{ title }}</h1>
+        <h1 class="title">{{ title }}</h1>
         <p class="details">80% Indicado/Ciencia Ficción/{{ year }}/EUA/14</p>
     </div>
 </template>
@@ -14,7 +14,7 @@
             }
         },
         created () {
-            axios.get('/tv-shows/SHOW123.json')
+            axios.get(this.$store.state.serieInfo)
                 .then(response => {
                     const serieInfo = response.data
                     this.title = serieInfo.Title
@@ -29,7 +29,7 @@
 <style lang="sass">
     @import '../assets/scss/geral.scss';
 
-    h1 {
+    .title {
         font-size: 55px;
     }
 

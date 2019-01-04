@@ -25,7 +25,7 @@ export default {
         bottomContent
     },
     created () {
-        axios.get('/tv-shows/SHOW123.json')
+        axios.get(this.$store.state.serieInfo)
             .then(response => {
                 const serieInfo = response.data
                 this.backgroundImage = 'url(' + serieInfo.Images.Background + ')'

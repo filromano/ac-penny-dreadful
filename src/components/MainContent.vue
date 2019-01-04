@@ -37,7 +37,7 @@
             }
         },
         created () {
-            axios.get('/episodes/SHOW123.json')
+            axios.get(this.$store.state.episodeList)
                 .then(response => {
                     const show = response.data.filter(Boolean)
                     for (let key in show) {
