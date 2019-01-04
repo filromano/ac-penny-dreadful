@@ -103,12 +103,22 @@
         width: 100%;
         height: 70%;
         list-style: none;
-        overflow: scroll;
+        overflow-y: scroll;
         li {
             display: block;
             width: 100%;
             float: left;
             border-bottom: 1px solid #303030;
+        }
+        &::-webkit-scrollbar {
+            width: 1em;
+        }
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #313131;
+            outline: 1px solid slategrey;
         }
     }
 
