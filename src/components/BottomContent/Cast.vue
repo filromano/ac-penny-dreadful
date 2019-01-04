@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-    import axios from 'axios'
+    import axios from 'axios';
     export default {
         data() {
             return {
@@ -18,7 +18,7 @@
             }
         },
         created () {
-            axios.get('/tv-shows/SHOW123.json')
+            axios.get(this.$store.state.serieInfo)
                 .then(response => {
                     const serieInfo = response.data
                     console.log(response)

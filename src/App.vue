@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import axios from 'axios'
-import topContent from './components/TopContent.vue'
-import mainContent from './components/mainContent.vue'
-import bottomContent from './components/BottomContent.vue'
+import axios from 'axios';
+import topContent from './components/TopContent.vue';
+import mainContent from './components/mainContent.vue';
+import bottomContent from './components/BottomContent.vue';
 export default {
     data() {
         return {

@@ -16,9 +16,8 @@
 </template>
 
 <script>
-    import geralContent from './BottomContent/Geral.vue'
-    import castContent from './BottomContent/Cast.vue'
-    import axios from 'axios'
+    import geralContent from './BottomContent/Geral.vue';
+    import castContent from './BottomContent/Cast.vue';
     export default {
         components: {
             geralContent,
@@ -80,5 +79,5 @@
     }
     .fade-enter, .fade-leave-to {
         opacity: 0;
-        }
+    }
 </style>
