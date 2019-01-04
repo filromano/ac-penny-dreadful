@@ -19,7 +19,6 @@
                     const serieInfo = response.data
                     this.title = serieInfo.Title
                     this.year = serieInfo.Year
-                    console.log(serieInfo);
                     
                 })
                 .catch(error => console.log(error))

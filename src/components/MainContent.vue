@@ -48,8 +48,6 @@
                             }
                         }
                     }
-                    console.log(this.serie[0].episodes)
-                    console.log(this.serie[1].episodes)
                 })
                 .catch(error => console.log(error))
         },
