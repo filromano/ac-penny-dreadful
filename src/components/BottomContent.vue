@@ -57,7 +57,7 @@
                      rgba(25, 25, 25, .9),
                      rgba(0,0,0, 0),
                      rgba(0,0,0, 0));
-        padding: 20px 40px;
+        padding: 20px $content-padding;
     }
 
     .nav-list {

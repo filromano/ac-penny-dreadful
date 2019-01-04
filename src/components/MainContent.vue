@@ -86,7 +86,7 @@
         float: right;
         height: 50%;
         width: 40%;
-        padding-right: 40px;
+        padding-right: $content-padding;
     }
 
     .season-nav {
