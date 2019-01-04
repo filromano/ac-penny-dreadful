@@ -146,6 +146,12 @@
         margin-bottom: 10px;
     }
 
+    .episode-description {
+        display: block;
+        float: left;
+        width: 100%;
+    }
+
     .play-icon {
         display: block;
         float: right;
