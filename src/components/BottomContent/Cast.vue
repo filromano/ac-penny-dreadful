@@ -1,7 +1,7 @@
 <template>
     <div class="cast">
         <ul>
-            <li  v-for="member in cast" :key="member">
+            <li  v-for="member in cast" :key="member.ID">
                 <p class="character">Personagem</p>
                 <p class="actor">{{ member.Name }}</p>
             </li>
@@ -21,7 +21,6 @@
             axios.get(this.$store.state.serieInfo)
                 .then(response => {
                     const serieInfo = response.data
-                    console.log(response)
                     const castData = serieInfo.Cast
                     for (let key in castData) {
                         const member = castData[key]

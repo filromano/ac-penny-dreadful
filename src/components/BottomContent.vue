@@ -39,8 +39,6 @@
                     this.geral = true;
                 }
                 this.isActive = true;
-                console.log(nav)
-                console.log(this.castlist)
             }
         }
     }
